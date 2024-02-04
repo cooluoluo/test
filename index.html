@@ -259,31 +259,27 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Talking upper-body synthesis is a promising task due to its versatile potential for video creation and consists of animating
+            the body and face from a source image with the motion from a given driving video.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            However, prior synthesis approaches fall short in addressing this task and have been
+            either limited to animating heads of a target person only, or have animated the upper body but neglected the synthesis of
+            precise facial details.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            To tackle this task, we propose a Photorealistic Talking Upper-body Synthesis method via 3D-aware
+            motion decomposition warping, named PTUS, to both precisely synthesize the upper body as well as recover the details
+            of the face such as blinking and lip synchronization. In particular, the motion decomposition mechanism consists of
+            a face-body motion decomposition, which decouples the 3D motion estimation of the face and body, and a local-global
+            motion decomposition, which decomposes the 3D face motion into global and local motions resulting in the transfer
+            of facial expression. The 3D-aware warping module transfers the large-scale and subtle 3D motions to the extracted
+            3D depth-aware features in a coarse-to-fine manner. Moreover, we present a new dataset, Talking-UB, which includes 
+            upper-body images with high-resolution faces, addressing the
+            limitations of prior datasets that either consist of only facial images or upper-body images with blurry faces. Experimental
+            results demonstrate that our proposed method can synthesize high-quality videos that preserve facial details, and achieves
+            superior results compared to state-of-the-art cross-person motion
+            transfer approaches.
           </p>
         </div>
       </div>
